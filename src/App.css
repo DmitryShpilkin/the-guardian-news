@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+/* --- Стили для контейнера всего приложения --- */
+.app {
+    /* Используем стандартный шрифт без засечек */
+    font-family: Arial, sans-serif;
+    /* Ограничиваем максимальную ширину контента для удобного чтения */
+    max-width: 800px;
+    /* Выравниваем блок по центру страницы */
+    margin: 0 auto;
+    /* Центрируем текст внутри блока */
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* --- Стили для блока поиска новостей --- */
+.news-search {
+    /* Добавляем вертикальные отступы сверху и снизу от блока поиска */
+    margin: 20px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Стили для поля ввода (input) внутри блока поиска */
+.news-search input {
+    width: 300px;           /* Фиксированная ширина поля */
+    padding: 10px;          /* Внутренние отступы для текста */
+    font-size: 16px;        /* Размер шрифта */
+    margin-right: 10px;     /* Отступ справа, чтобы отделить от кнопки */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Стили для кнопки поиска */
+.news-search button {
+    padding: 10px 20px;     /* Отступы внутри кнопки (сверху/снизу и слева/справа) */
+    font-size: 16px;        /* Размер шрифта на кнопке */
+    background-color: #007eb6; /* Основной цвет фона (синий) */
+    color: white;           /* Цвет текста на кнопке */
+    border: none;           /* Убираем стандартную рамку кнопки */
+    cursor: pointer;        /* Меняем курсор на "руку" при наведении */
 }
 
-.App-link {
-  color: #61dafb;
+/* Стили для кнопки при наведении курсора (делаем цвет темнее) */
+.news-search button:hover {
+    background-color: #005f8c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* --- Стили для списка новостей --- */
+.news-list {
+    margin-top: 20px;       /* Отступ сверху от блока поиска */
+}
+
+/* Стили для одного элемента новости (статьи) */
+.news-item {
+    border-bottom: 1px solid #ccc; /* Линия-разделитель между новостями */
+    padding: 10px 0;         /* Вертикальный отступ внутри элемента */
+}
+
+/* Убираем стандартные отступы у заголовков статей, чтобы они не "выпирали" за линию-разделитель */
+.news-item h3 {
+    margin: 0;
+}
+
+/* Стили для ссылок на полные статьи */
+.news-item a {
+    color: #007eb6;          /* Синий цвет ссылки, как у кнопки поиска */
+    text-decoration: none;   /* Убираем подчеркивание по умолчанию */
+}
+
+/* Добавляем подчеркивание ссылке при наведении курсора */
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+/* --- Стили для блока пагинации (кнопок навигации по страницам) --- */
+.pagination {
+    margin-top: 20px;       /* Отступ сверху от списка новостей */
+}
+
+/* Общие стили для кнопок "Предыдущая" и "Следующая" в пагинации.
+   Используем те же цвета, что и у кнопки поиска, для единообразия. */
+.pagination button {
+    margin: 0 5px;          /* Небольшой горизонтальный отступ между кнопками */
+    padding: 10px 20px;
+    background-color: #007eb6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Изменение цвета фона кнопок пагинации при наведении курсора */
+.pagination button:hover {
+    background-color: #005f8c;
 }
